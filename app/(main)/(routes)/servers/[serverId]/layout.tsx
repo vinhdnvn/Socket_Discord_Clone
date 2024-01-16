@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 import { db } from "@/lib/db";
 import { currentProfile } from "@/lib/current-profile";
 import { ServerSidebar } from "@/components/server/server-sidebar";
+import AIConversation from "@/components/ai/AIconversation";
 
 const ServerIdLayout = async ({
   children,
@@ -34,14 +35,23 @@ const ServerIdLayout = async ({
   }
 
   return ( 
-    <div className="h-full">
+    <div className="h-full flex flex-row">
+      
       <div 
       className="hidden md:flex h-full w-60 z-20 flex-col fixed inset-y-0">
+       
         <ServerSidebar serverId={params.serverId} />
+        
       </div>
-      <main className="h-full md:pl-60">
+      <main className="h-full w-[1450px] md:pl-60 border-r-2 border-black/10">
+     
         {children}
+       
       </main>
+      {/* chatbotAI */}
+      <AIConversation />
+     
+    
     </div>
    );
 }
