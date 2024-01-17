@@ -5,6 +5,7 @@ import { db } from "@/lib/db";
 import { currentProfile } from "@/lib/current-profile";
 import { ServerSidebar } from "@/components/server/server-sidebar";
 import AIConversation from "@/components/ai/AIconversation";
+import Image from "next/image";
 
 const ServerIdLayout = async ({
   children,
@@ -36,20 +37,26 @@ const ServerIdLayout = async ({
 
   return ( 
     <div className="h-full flex flex-row">
-      
+      {/* <header>
+      <Image src="/headerHome.jpg" className="w-full h-[200px]" width={20} height={} alt="Header"/>
+      </header> */}
+
       <div 
       className="hidden md:flex h-full w-60 z-20 flex-col fixed inset-y-0">
        
         <ServerSidebar serverId={params.serverId} />
         
       </div>
-      <main className="h-full w-[1450px] md:pl-60 border-r-2 border-black/10">
+      <main className="h-full w-screen md:pl-60 border-r-2 border-black/10">
      
         {children}
-       
+        <div className="">
+
+<AIConversation />
+</div>
       </main>
-      {/* chatbotAI */}
-      <AIConversation />
+    
+    
      
     
     </div>
