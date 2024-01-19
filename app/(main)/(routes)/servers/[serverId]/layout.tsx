@@ -5,7 +5,7 @@ import { db } from "@/lib/db";
 import { currentProfile } from "@/lib/current-profile";
 import { ServerSidebar } from "@/components/server/server-sidebar";
 import AIConversation from "@/components/ai/AIconversation";
-import Image from "next/image";
+
 
 const ServerIdLayout = async ({
   children,
@@ -36,10 +36,14 @@ const ServerIdLayout = async ({
   }
 
   return ( 
-    <div className="h-full flex flex-row">
-      {/* <header>
-      <Image src="/headerHome.jpg" className="w-full h-[200px]" width={20} height={} alt="Header"/>
-      </header> */}
+    <div className="h-full flex flex-col ">
+      <header className="items-center flex flex-row w-fit md:h-[150px]">
+      <img src="/download.jpg" className=" " alt="Header"/>
+      <img src="/download.jpg" className=" " alt="Header"/>
+      <img src="/download.jpg" className=" " alt="Header"/>
+      </header>
+<div className="flex flex-row">
+
 
       <div 
       className="hidden md:flex h-full w-60 z-20 flex-col fixed inset-y-0">
@@ -55,6 +59,7 @@ const ServerIdLayout = async ({
 <AIConversation />
 </div>
       </main>
+</div>
     
     
      
