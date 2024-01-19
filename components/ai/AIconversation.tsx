@@ -69,7 +69,7 @@ const AIConversation = (props: any) => {
 
   return (
     <>
-      <div className="flex absolute top-16 right-7">
+      <div className="flex absolute md:top-[200px] right-7">
         <button
           type="button"
           onClick={openModal}
